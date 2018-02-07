@@ -1,9 +1,12 @@
 package datastructures.softunit.arrayList;
 
+import java.util.Arrays;
+import java.util.Iterator;
+
 import org.junit.Assert;
 import org.junit.Test;
 
-public class ArrayListTests {
+public class ArrayListTests{
 
 	@Test
 	public void addSingleElementShouldIncreaseCount() {
@@ -132,5 +135,6 @@ public class ArrayListTests {
 
 		Assert.assertEquals(0, list.getCount());
 	}
+
 
 }

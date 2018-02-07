@@ -1,18 +1,22 @@
 package datastructures.softunit.arrayList;
 
-public class ArrayList<T> {
+import java.util.Iterator;
 
-	private int capacity = 2;
-	private Object[] arr;
+public class ArrayList<T> implements Iterable<T> {
+
+	 int capacity = 2;
+	private T[] arr;
 	private int count = 0;
 
+	@SuppressWarnings("unchecked")
 	public ArrayList(int capacity) {
-		this.arr = new Object[capacity];
+		this.arr = (T[]) new Object[capacity];
 		this.capacity = capacity;
 	}
 
+	@SuppressWarnings("unchecked")
 	public ArrayList() {
-		this.arr = new Object[capacity];
+		this.arr =  (T[]) new Object[capacity];
 	}
 
 	public int getCount() {
@@ -61,17 +65,39 @@ public class ArrayList<T> {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	private void shrink() {
-		Object[] newArr = new Object[this.capacity / 2];
+		T[] newArr = (T[]) new Object[this.capacity / 2];
 		System.arraycopy(this.arr, 0, newArr, 0, this.count);
 		this.arr = newArr;
 	}
 
+	@SuppressWarnings("unchecked")
 	private void grow() {
-		Object[] newArr = new Object[this.capacity * 2];
+		T[] newArr = (T[]) new Object[this.capacity * 2];
 		System.arraycopy(this.arr, 0, newArr, 0, this.count);
 		this.arr = newArr;
 		this.capacity = this.capacity * 2;
 	}
+
+	public Iterator<T> iterator() {
+		Iterator<T> it = new Iterator<T>() {
+			
+			int itCount = 0;
+			public boolean hasNext() {
+				// TODO Auto-generated method stub
+				return itCount < count;			}
+
+			public T next() {
+				T value = arr[itCount++];
+				return value;
+			}
+
+		};
+		// TODO Auto-generated method stub
+		return it;
+	}
+
+	
 
 }
