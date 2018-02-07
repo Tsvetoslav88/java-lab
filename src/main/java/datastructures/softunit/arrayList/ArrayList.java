@@ -22,7 +22,7 @@ public class ArrayList<T> {
 	@SuppressWarnings("unchecked")
 	public T get(int index) {
 		if (index < 0 || index >= this.capacity) {
-			throw new IndexOutOfBoundsException();
+			throw new IllegalArgumentException();
 		}
 		return (T) this.arr[index];
 	}
@@ -49,7 +49,7 @@ public class ArrayList<T> {
 
 	public void set(int i, T item) {
 		if (i < 0 || i >= this.capacity) {
-			throw new IndexOutOfBoundsException();
+			throw new IllegalArgumentException();
 		}
 		this.arr[i] = item;
 
