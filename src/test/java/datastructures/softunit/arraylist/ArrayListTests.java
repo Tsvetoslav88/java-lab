@@ -1,10 +1,12 @@
-package datastructures.softunit.arrayList;
+package datastructures.softunit.arraylist;
 
 import java.util.Arrays;
 import java.util.Iterator;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import datastructures.softunit.arraylist.ArrayList;
 
 public class ArrayListTests{
 

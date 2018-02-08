@@ -1,4 +1,4 @@
-package datastructures.softunit.arrayList;
+package datastructures.softunit.arraylist;
 
 import java.util.Iterator;
 
