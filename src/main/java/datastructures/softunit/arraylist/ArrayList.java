@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 public class ArrayList<T> implements Iterable<T> {
 
-	 int capacity = 2;
+	int capacity = 2;
 	private T[] arr;
 	private int count = 0;
 

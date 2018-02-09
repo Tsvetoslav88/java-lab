@@ -1,6 +1,8 @@
 package datastructures.softunit.linkedlist;
 
-public class LinkedList<E> /* implements Iterable<E> */ {
+import java.util.Iterator;
+
+public class LinkedList<E>  implements Iterable<E> {
 
 	private int size;
 	private Node head;
@@ -69,14 +71,55 @@ public class LinkedList<E> /* implements Iterable<E> */ {
 	}
 
 	public E removeLast() {
-		// TODO
-		throw new UnsupportedOperationException();
+		if(size == 0){
+			throw new UnsupportedOperationException();
+		}
+		
+		@SuppressWarnings("unchecked")
+		E element = (E) this.tail.value;
+		if(size == 1){
+			this.head = null;
+			this.tail = null;
+		}else{
+			Node parent = this.head;
+			while(parent.next != this.tail){
+				parent = parent.next;
+			}
+			parent.next = null;
+			this.tail = parent;
+			
+		}
+		this.size--;
+		return element;
 	}
 
-	// @Override
-	// public Iterator<E> iterator() {
-	// return null;
-	// }
+	@Override
+	public Iterator<E> iterator() {
+		Iterator<E> it = new Iterator<E>() {
+
+			
+			Node currentNode = head;
+			Node nextNode = head;
+			int count = 0;
+			@Override
+			public boolean hasNext() {
+				// TODO Auto-generated method stub
+				return count < size;//enextNode.next!=null;
+			}
+
+			@SuppressWarnings("unchecked")
+			@Override
+			public E next() {
+				count++;
+
+				currentNode = nextNode;
+				nextNode = currentNode.next;
+				
+				return (E) currentNode.value;
+			}
+		};
+		return it;
+	}
 
 	private class Node<T> {
 
