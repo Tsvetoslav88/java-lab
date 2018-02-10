@@ -2,7 +2,9 @@
 *.class
 
 # JDT-specific (Eclipse Java Development Tools)     
+.project
 .classpath
+.settings/
 
 
 # Log file
@@ -13,6 +15,9 @@
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
+
+# Ignore `bin` dir
+bin/
 
 # Package Files #
 *.jar
