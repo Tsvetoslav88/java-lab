@@ -1,5 +1,8 @@
 package datastructures.softunit.binarytrees;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -130,48 +133,100 @@ public class BinarySearchTreeTests {
 		Assert.assertEquals(Integer.valueOf(60), right_right_left_left.getValue());
 	}
 
-	// @Test
-	// public void testRange_getAllNodes() {
-	// Iterable<Integer> range = bst.range(0, 100);
-	//
-	// Integer[] values = new Integer[] { 1, 5, 8, 12, 18, 21, 23 };
-	// int index = 0;
-	// for (Integer integer : range) {
-	// Assert.assertEquals(values[index++], integer);
-	// }
-	// }
+	@Test
+	public void testDeleteMinOneElement_shouldWork() {
+		// Arrange
+		BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+		bst.insert(1);
 
-	// @Test
-	// public void testRange_shouldNotFindAnyNodes() {
-	// Iterable<Integer> range = bst.range(-1, -1);
-	//
-	// List<Integer> foundValues = new ArrayList<>();
-	// for (Integer value : range) {
-	// foundValues.add(value);
-	// }
-	//
-	// Assert.assertEquals(0, foundValues.size());
-	// }
-	//
-	// @Test
-	// public void testRange_shouldFindOnlyOneElement() {
-	// Iterable<Integer> range = bst.range(12, 12);
-	//
-	// int index = 0;
-	// Integer[] values = new Integer[] { 12 };
-	// for (Integer value : range) {
-	// Assert.assertEquals(values[index], value);
-	// }
-	// }
-	//
-	// @Test
-	// public void testRange_shouldFindNodes() {
-	// Iterable<Integer> range = bst.range(5, 18);
-	//
-	// int index = 0;
-	// Integer[] values = new Integer[]{5, 8, 12, 18};
-	// for (Integer value : range) {
-	// Assert.assertEquals(values[index++], value);
-	// }
-	// }
+		// Act
+		bst.deleteMin();
+		List<Integer> nodes = new ArrayList<>();
+		bst.eachInOrder(nodes::add);
+
+		// Assert
+		List<Integer> expectednodes = new ArrayList<>();
+		Assert.assertEquals(expectednodes, nodes);
+	}
+
+	@Test
+	public void testDeleteMinOneElementInBigTree_shouldWork() {
+		// Arrange
+		BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+		bst.insert(50);
+		bst.insert(100);
+		bst.insert(75);
+		bst.insert(40);
+		bst.insert(42);
+		bst.insert(41);
+		bst.insert(43);
+		bst.insert(60);
+		System.out.println("\n");
+		// Act
+		bst.deleteMin();
+		List<Integer> nodes = new ArrayList<>();
+		bst.eachInOrder(nodes::add);
+		System.out.println(nodes);
+
+		// Assert
+		List<Integer> expectednodes = new ArrayList<>();
+		expectednodes.add(41);
+		expectednodes.add(42);
+		expectednodes.add(43);
+		expectednodes.add(50);
+		expectednodes.add(60);
+		expectednodes.add(75);
+		expectednodes.add(100);
+		Assert.assertEquals(expectednodes, nodes);
+	}
+
+	@Test
+	public void testRange_getAllNodes() {
+		Iterable<Integer> range = bst.range(0, 100);
+
+		Integer[] values = new Integer[] { 1, 5, 8, 12, 18, 21, 23 };
+		int index = 0;
+		for (Integer integer : range) {
+			Assert.assertEquals(values[index++], integer);
+		}
+	}
+
+	@Test
+	public void testRange_shouldNotFindAnyNodes() {
+		Iterable<Integer> range = bst.range(-1, -1);
+
+		List<Integer> foundValues = new ArrayList<>();
+		for (Integer value : range) {
+			foundValues.add(value);
+		}
+
+		Assert.assertEquals(0, foundValues.size());
+	}
+
+	@Test
+	public void testRange_shouldFindOnlyOneElement() {
+		Iterable<Integer> range = bst.range(12, 12);
+
+		int index = 0;
+		Integer[] values = new Integer[] { 12 };
+		for (Integer value : range) {
+			Assert.assertEquals(values[index], value);
+		}
+	}
+
+	@Test
+	public void testRange_shouldFindNodes() {
+		Iterable<Integer> range = bst.range(5, 18);
+		
+		System.out.println("*****************\n");
+		ArrayList<Integer> list = new ArrayList<>();
+		bst.eachInOrder(list::add);
+		System.out.println(list);
+
+		int index = 0;
+		Integer[] values = new Integer[] { 5, 8, 12, 18 };
+		for (Integer value : range) {
+			Assert.assertEquals(values[index++], value);
+		}
+	}
 }

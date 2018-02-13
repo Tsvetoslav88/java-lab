@@ -1,5 +1,7 @@
 package datastructures.softunit.binarytrees;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 
 public class BinarySearchTree<T extends Comparable<T>> {
@@ -115,8 +117,56 @@ public class BinarySearchTree<T extends Comparable<T>> {
 		}
 	}
 
+	public void deleteMin(){
+		
+		if(this.root == null){
+			return;
+		}
+
+		if(root.getLeft() == null && root.getRight() == null){
+			this.root = null;
+		}else{
+			Node parent = null;
+			Node current = this.root;
+			
+			
+			while(current.getLeft() != null){
+				parent = current;
+				current = current.getLeft();
+			}
+			
+			if(current.getRight() != null){
+				parent.setLeft(current.getRight());
+			}else{
+				parent.setLeft(null);
+			}
+
+		}
+		
+	}
+	
 	public Iterable<T> range(T from, T to) {
-		throw new UnsupportedOperationException();
+		List<T> list = new ArrayList<>();
+		this.range(this.root, list, from, to);
+		return list;
+	}
+	
+	private void range(Node node, List<T> list, T from, T to){
+		if(node != null){
+			int compareLow = node.getValue().compareTo(from);
+			int compareHigh = node.getValue().compareTo(to);
+			if(compareLow > 0){
+				range(node.getLeft(), list, from, to);
+			}
+			
+			if(compareLow >= 0 && compareHigh <= 0){
+				list.add(node.getValue());
+			}
+			
+			if(compareHigh < 0){
+				range(node.getRight(), list, from, to);
+			}
+		}
 	}
 
 	class Node {
