@@ -15,13 +15,11 @@ public class Main {
     	heap.insert(20);
     	
     	System.out.println(heap);
-    	/*
-    	 * Console.WriteLine("Heap elements (max to min):");
-        while (heap.Count > 0)
+        while (heap.size() > 0)
         {
-            var max = heap.Pull();
-            Console.WriteLine(max);
+            Integer max = heap.pull();
+            System.out.println(max);
         }
-    	 * */
+    	 
     }
 }

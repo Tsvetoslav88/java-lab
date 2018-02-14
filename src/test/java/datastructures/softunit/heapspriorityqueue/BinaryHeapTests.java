@@ -72,74 +72,73 @@ public class BinaryHeapTests {
         Assert.assertEquals(Integer.valueOf(8), heap.peek());
     }
 
-//    @Test
-//    public void pull_Single_TestCount() {
-//        // Arrange
-//        BinaryHeap<Integer> heap = new BinaryHeap<>();
+    @Test
+    public void pull_Single_TestCount() {
+        // Arrange
+        BinaryHeap<Integer> heap = new BinaryHeap<>();
+
+        // Act
+        heap.insert(3);
+        heap.insert(5);
+
+        heap.pull();
+        // Assert
+        Assert.assertEquals(1, heap.size());
+    }
 //
-//        // Act
-//        heap.insert(3);
-//        heap.insert(5);
-//
-//        heap.pull();
-//
-//        // Assert
-//        Assert.assertEquals(1, heap.size());
-//    }
-//
-//    @Test
-//    public void pull_Single_TestElement() {
-//        // Arrange
-//        BinaryHeap<Integer> heap = new BinaryHeap<>();
-//
-//        // Act
-//        heap.insert(3);
-//
-//        // Assert
-//        Assert.assertEquals(Integer.valueOf(3), heap.pull());
-//    }
-//
-//    @Test
-//    public void pull_Multiple_TestCount() {
-//        // Arrange
-//        BinaryHeap<Integer> heap = new BinaryHeap<>();
-//
-//        // Act
-//        heap.insert(5);
-//        heap.insert(3);
-//        heap.insert(1);
-//
-//        // Assert
-//        Assert.assertEquals(Integer.valueOf(5), heap.pull());
-//        Assert.assertEquals(Integer.valueOf(3), heap.pull());
-//        Assert.assertEquals(Integer.valueOf(1), heap.pull());
-//        Assert.assertEquals(0, heap.size());
-//    }
-//
-//    @Test
-//    public void pull_Multiple_TestElements() {
-//        // Arrange
-//        BinaryHeap<Integer> heap = new BinaryHeap<>();
-//
-//        // Act
-//        heap.insert(3);
-//        heap.insert(5);
-//        heap.insert(6);
-//        heap.insert(7);
-//
-//        // Assert
-//        Assert.assertEquals(Integer.valueOf(7), heap.pull());
-//        Assert.assertEquals(Integer.valueOf(6), heap.pull());
-//        Assert.assertEquals(Integer.valueOf(5), heap.pull());
-//        Assert.assertEquals(Integer.valueOf(3), heap.pull());
-//    }
-//
-//    @Test(expected = IllegalArgumentException.class)
-//    public void Pull_EmptyHeap() {
-//        // Arrange
-//        BinaryHeap<Integer> heap = new BinaryHeap<>();
-//
-//        // Act
-//        heap.pull();
-//    }
+    @Test
+    public void pull_Single_TestElement() {
+        // Arrange
+        BinaryHeap<Integer> heap = new BinaryHeap<>();
+
+        // Act
+        heap.insert(3);
+
+        // Assert
+        Assert.assertEquals(Integer.valueOf(3), heap.pull());
+    }
+
+    @Test
+    public void pull_Multiple_TestCount() {
+        // Arrange
+        BinaryHeap<Integer> heap = new BinaryHeap<>();
+
+        // Act
+        heap.insert(5);
+        heap.insert(3);
+        heap.insert(1);
+
+        // Assert
+        Assert.assertEquals(Integer.valueOf(5), heap.pull());
+        Assert.assertEquals(Integer.valueOf(3), heap.pull());
+        Assert.assertEquals(Integer.valueOf(1), heap.pull());
+        Assert.assertEquals(0, heap.size());
+    }
+
+    @Test
+    public void pull_Multiple_TestElements() {
+        // Arrange
+        BinaryHeap<Integer> heap = new BinaryHeap<>();
+
+        // Act
+        heap.insert(3);
+        heap.insert(5);
+        heap.insert(6);
+        heap.insert(7);
+
+        // Assert
+        Assert.assertEquals(Integer.valueOf(7), heap.pull());
+        Assert.assertEquals(Integer.valueOf(6), heap.pull());
+        Assert.assertEquals(Integer.valueOf(5), heap.pull());
+        Assert.assertEquals(Integer.valueOf(3), heap.pull());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void Pull_EmptyHeap() {
+        // Arrange
+        BinaryHeap<Integer> heap = new BinaryHeap<>();
+
+        // Act
+        heap.pull();
+    }
 }

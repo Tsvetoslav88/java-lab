@@ -43,6 +43,46 @@ public class BinaryHeap<T extends Comparable<T>> {
     }
 
     public T pull() {
-        throw new UnsupportedOperationException();
+        
+    	if(this.size() == 0){
+    		throw new  IllegalArgumentException();
+    	}
+    	
+        T element = this.heap.get(0);
+    	
+        //Swap first with last element
+    	this.swap(0, size() - 1);
+
+    	//Remove last element which till now it was first
+    	this.heap.remove(size() - 1);
+    	this.heapifyDown(element, 0);
+        return element;
     }
+
+	private void heapifyDown(T element, int index) {
+		
+		if(index < size()/2){
+			
+			//Left child
+			int childIndex = (index * 2) + 1;
+			
+			//Check if there is a right child && rightChild > leftChild
+			if(childIndex + 1 < this.size() && !isGreater(childIndex, childIndex + 1)){//if left child is smaller than right
+				//rightChild = leftChild + 1 
+				childIndex += 1;
+			}
+			
+			//Compare currentElement with bigger child element
+			int compare = this.heap.get(index).compareTo(this.heap.get(childIndex));
+			if(compare < 0){
+				swap(index, childIndex);
+				this.heapifyDown(this.heap.get(childIndex), childIndex);
+			}
+		}
+		
+	}
+	
+	private boolean isGreater(int firstIndex, int secondIndex){
+		return this.heap.get(firstIndex).compareTo(this.heap.get(secondIndex)) > 0;
+	}
 }
