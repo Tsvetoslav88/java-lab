@@ -9,10 +9,10 @@ public class Heap<E extends Comparable<E>> {
     
     
     
-    private static <E> void heapSort(E[] array) {
-    	for(int index = array.length - 1; index>=0; index--){
-    		swap(array, 0, index);
-    		heapifyDown(array, 0, index);
+    private static <E> void heapSort(E[] arr) {
+    	for(int index = arr.length - 1; index>=0; index--){
+    		swap(arr, 0, index);
+    		heapifyDown(arr, 0, index);
     	}
 	}
 
