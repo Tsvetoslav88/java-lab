@@ -1,4 +1,4 @@
-package oraclecertifications.ocp.designpatternsandprinciple;
+package oraclecertifications.ocp.genericsandcollections;
 
 import java.util.ArrayList;
 import java.util.Collections;
