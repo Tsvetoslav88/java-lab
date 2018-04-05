@@ -1,4 +1,4 @@
-package oraclecertifications.ocp.genericsandcollections;
+package oraclecertifications.ocp.genericsandcollections.mapapis;
 
 import java.util.HashMap;
 import java.util.Map;
