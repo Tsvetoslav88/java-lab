@@ -15,8 +15,8 @@ public class TraditionalSearch {
 		// Java 7 and older style
 		// print(animals, new CheckIfHopper()); // pass class that does check
 		// Java 7 lambda expression
-		print(animals, a -> a.canHop());
-		print(animals, a -> a.canSwim());
+		print(animals, Animal::canHop);//Method reference
+		print(animals, a -> a.canSwim());//Lambda expression
 
 	}
 
