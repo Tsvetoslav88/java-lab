@@ -28,9 +28,9 @@ public class OptionalExample {
 		
 		//The other methods allow you to specify what to do if a value isn’t present
 		Optional<Double> opt2 = avarage();
-		System.out.println(opt.orElse(Double.NaN));//you can return a specific value or variable
-		System.out.println(opt.orElseGet(() -> Math.random()));//using a Supplier to generate a value at runtime to return instead
-		System.out.println(opt.orElseThrow(() -> new IllegalStateException()));//shows using a different Supplier to create an exception that should be thrown
+		System.out.println(opt2.orElse(Double.NaN));//you can return a specific value or variable
+		System.out.println(opt2.orElseGet(() -> Math.random()));//using a Supplier to generate a value at runtime to return instead
+		System.out.println(opt2.orElseThrow(() -> new IllegalStateException()));//shows using a different Supplier to create an exception that should be thrown
 		
 	}
 
