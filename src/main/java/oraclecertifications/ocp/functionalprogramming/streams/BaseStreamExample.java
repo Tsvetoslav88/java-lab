@@ -101,7 +101,7 @@ public class BaseStreamExample {
 		//NOTE:The map() method on streams is for transforming data
 		Stream<String> s7 = Stream.of("monkey", "gorilla", "bonobo");
 		s7.map(v->v.length()).forEach(w->System.out.print(w));
-		System.out.println("\n");
+		System.out.println("\n");//676
 		
 		//flatMap() - takes each element in the stream and makes any elements it contains
 		//top-level elements in a single stream. This is helpful when you want to remove empty
