@@ -1,4 +1,4 @@
-package standard_containers;
+package datastructures;
 
 /**
  * Collection of element in which items are added and removed in Last-in-First-out fashion(LIFO for short)

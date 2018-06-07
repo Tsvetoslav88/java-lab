@@ -1,4 +1,4 @@
-package logicalexercises;
+package puzzles;
 
 import java.util.LinkedList;
 import java.util.Queue;
