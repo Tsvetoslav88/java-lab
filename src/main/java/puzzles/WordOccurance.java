@@ -8,7 +8,7 @@ import java.util.Map;
  * @author tstsvetk
  *
  */
-public class WordOccurances {
+public class WordOccurance {
 	private static String text = "Upload an image to  determine how much text is in your ad image. If the proportion of text to image is too high, your ad may not reach its full audience ";
 
 	
