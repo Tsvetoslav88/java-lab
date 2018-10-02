@@ -30,9 +30,9 @@ public class DateTimeExample {
 		
 		//Manipulating Dates and Times
 		LocalDate date = LocalDate.of(2014, Month.JANUARY, 20);
-		System.out.println(date); // 2014–01–20
+		System.out.println(date); // 2014-01-20
 		date = date.plusDays(2);//plusWeeks, plusMonths, plusYears, minusDays, minusHours, minusSeconds
-		System.out.println(date); // 2014–01–22
+		System.out.println(date); // 2014-01-22
 		
 		//Period 
 		Period annually = Period.ofYears(1);//ofMonths, ofWeeks, ofDays or of(1, 0, 7)// every year and 7 days

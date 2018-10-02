@@ -10,8 +10,8 @@ import java.util.Set;
  * Internationalization -  is the process of designing your program so it can be adapted. This
  * 	involves placing strings in a property file and using classes like DateFormat so that the right
  *	format is used based on user preferences
- * Localization -  means actually supporting multiple locales. Oracle defines a locale as “a
- * 	specific geographical, political, or cultural region.”
+ * Localization -  means actually supporting multiple locales. Oracle defines a locale as a
+ * 	specific geographical, political, or cultural region.
  * Resource bundle - contains the local specific objects to be used by a program(can be in a property fi le or in a Java class)
  * Property file - is a file in a specific format with key/value pairs
  */

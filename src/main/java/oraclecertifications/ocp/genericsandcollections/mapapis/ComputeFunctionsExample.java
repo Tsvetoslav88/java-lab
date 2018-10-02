@@ -8,11 +8,11 @@ import java.util.function.Function;
 /**
  * computeIfPresent() calls the BiFunction if the requested key is found.
  * 
- * computeIfAbsent(), the functional interface runs only when the key isn’t present or is null
+ * computeIfAbsent(), the functional interface runs only when the key isn't present or is null
  * 
  * If the mapping function is called and returns null.
  * The call to computeIfPresent() removes the key from the map. 
- * The call to computeIfAbsent() doesn’t add a key.
+ * The call to computeIfAbsent() doesn't add a key.
  * 
  * @author cpt2tts
  * 

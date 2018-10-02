@@ -48,7 +48,7 @@ public class AdvanceStream {
 		System.out.println(map3); // {5=[lions, bears], 6=[tigers]}
 		System.out.println();
 		
-		//Partitioning is a special case of grouping. With partitioning, there are only two possible groups—true and false. Partitioning is like splitting a list into two parts
+		//Partitioning is a special case of grouping. With partitioning, there are only two possible groups true and false. Partitioning is like splitting a list into two parts
 		Stream<String> ohMy6 = Stream.of("lions", "tigers", "bears");
 		Map<Boolean, List<String>> map4 = ohMy6.collect(
 		Collectors.partitioningBy(s -> s.length() <= 5));

@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
  * 
  * You should use a concurrent collection class anytime that you are going to have multiple
  * threads modify a collections object outside a synchronized block or method, even if you
- * don’t expect a concurrency problem.
+ * don't expect a concurrency problem.
  * @author tstsvetk
  *
  */

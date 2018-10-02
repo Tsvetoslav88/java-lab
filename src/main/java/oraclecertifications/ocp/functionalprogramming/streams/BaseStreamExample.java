@@ -15,7 +15,7 @@ import java.util.stream.Stream;
  * There are three parts to a stream pipeline:
  * - Source: Where the stream comes from.
  * - Intermediate operations: Transforms the stream into another one. There can be as few
- * or as many intermediate operations as you’d like. Since streams use lazy evaluation, the
+ * or as many intermediate operations as you'd like. Since streams use lazy evaluation, the
  * intermediate operations do not run until the terminal operation runs.
  * - Terminal operation: Actually produces a result. Since streams can be used only once,
  * the stream is no longer valid after a terminal operation completes.
@@ -56,7 +56,7 @@ public class BaseStreamExample {
 		List<String> list1 = Arrays.asList("monkey", "2", "chimp");
 		Predicate<String> pred = x -> Character.isLetter(x.charAt(0));
 		System.out.println(list1.stream().anyMatch(pred)); // true -> because two of the three elements match
-		System.out.println(list.stream().allMatch(pred)); // false -> because one doesn’t match
+		System.out.println(list.stream().allMatch(pred)); // false -> because one doesnï¿½t match
 		System.out.println(list.stream().noneMatch(pred)); // false -> because one matches
 		System.out.println();
 		

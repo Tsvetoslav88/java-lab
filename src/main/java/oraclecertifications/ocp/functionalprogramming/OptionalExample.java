@@ -26,7 +26,7 @@ public class OptionalExample {
 		
 		opt.ifPresent(System.out::println);//We want something done if a value is present
 		
-		//The other methods allow you to specify what to do if a value isn’t present
+		//The other methods allow you to specify what to do if a value isn't present
 		Optional<Double> opt2 = avarage();
 		System.out.println(opt2.orElse(Double.NaN));//you can return a specific value or variable
 		System.out.println(opt2.orElseGet(() -> Math.random()));//using a Supplier to generate a value at runtime to return instead
