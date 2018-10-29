@@ -1,7 +1,21 @@
-We use the adapter in real life a lot. For example, we use a memory card adapter to connect a memory card and a computer since the computer only support one type of memory card and our card is not compatible with the computer.
+In other words, Adapter design pattern is one of the structural design patterns and it’s
+used so that two unrelated interfaces can work together. The object that joins these
+unrelated interfaces is called an Adapter. As a real life example, we can think of a mobile
+charger as an adapter because mobile battery needs 3 volts to charge but the normal socket
+produces either 120V (US) or 240V (India). So the mobile charger works as an adapter
+between mobile charging socket and the wall socket.
 
-Adapter is a converter between two incompatible entities. Adapter pattern is a structural pattern.
+In the adapter pattern, a wrapper class (i.e., the adapter) is used translate requests from it
+to another class (i.e., the adoptee). In effect, an adapter provides particular interactions
+with an adoptee that are not offered directly by the adoptee.
 
-In Java design pattern, Adapter pattern works as a bridge between two incompatible interfaces.
 
-By using the adapter pattern we can unify the two incompatible interfaces.
+
+When to use Adapter Pattern:
+The Adapter pattern should be used when:
+* There is an existing class, and its interface does not match the one you need.
+* You want to create a reusable class that cooperates with unrelated or unforeseen classes,
+that is, classes that don’t necessarily have compatible interfaces.
+* There are several existing subclasses to be use, but it’s impractical to adapt their
+interface by subclassing every one. An object adapter can adapt the interface of its parent
+class.

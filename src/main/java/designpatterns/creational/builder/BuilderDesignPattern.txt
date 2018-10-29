@@ -5,3 +5,11 @@ to be more modular with each implementation contained in a different builder
 object. Adding a new implementation (i.e., adding a new builder) becomes easier. The
 object construction process becomes independent of the components that make up
 the object. This provides more control over the object construction process.
+
+
+When to use the Builder Pattern:
+Use the Builder pattern when
+* The algorithm for creating a complex object should be independent of the parts that
+make up the object and how they’re assembled.
+* The construction process must allow different representations for the object that’s
+constructed.

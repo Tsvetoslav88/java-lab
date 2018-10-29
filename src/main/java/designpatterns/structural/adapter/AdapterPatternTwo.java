@@ -50,7 +50,7 @@ class MyPlayer implements Player{
 	
 }
 
-public class Main {
+public class AdapterPatternTwo {
 
 	public static void main(String[] args) {
 		MyPlayer myPlayer = new MyPlayer();
