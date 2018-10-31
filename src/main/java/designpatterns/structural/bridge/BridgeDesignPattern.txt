@@ -1,5 +1,21 @@
+The adapter design pattern helps in making two incompatible classes to work together.
+But, bridge design pattern decouples the abstraction and implementation by creating two
+different hierarchies.
+
+
 Bridge pattern decouples an definition from its implementation. It is a structural pattern.
-
 This pattern involves an interface which acts as a bridge. The bridge makes the concrete classes independent from interface implementer classes.
-
 Both types of classes can be altered without affecting each other.
+
+
+In the bridge pattern, we separate an abstraction and its implementation and develop
+separate inheritance structures for both the abstraction and the implementer. The
+abstraction is an interface or abstract class, and the implementer is likewise an interface or
+abstract class. The abstraction contains a reference to the implementer. Children of the
+abstraction are referred to as refined abstractions, and children of the implementer are
+concrete implementers. Since we can change the reference to the implementer in the
+abstraction, we are able to change the abstraction’s implementer at run-time. Changes to
+the implementer do not affect client code.
+The Bridge Pattern’s intent is to decouple an abstraction from its implementation so that
+the two can vary independently. It puts the abstraction and implementation into two
+different class hierarchies so that both can be extend independently.
