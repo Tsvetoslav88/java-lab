@@ -1,0 +1,16 @@
+Implementing Supplier
+A Supplier is used when you want to generate or supply values without taking any input.
+The Supplier interface is defi ned as
+@FunctionalInterface public class Supplier<T> {
+	public T get();
+}
+
+
+Supplier<LocalDate> s1 = LocalDate::now;
+Supplier<LocalDate> s2 = () -> LocalDate.now();
+
+LocalDate d1 = s1.get();
+LocalDate d2 = s2.get();
+
+System.out.println(d1);
+System.out.println(d2);
